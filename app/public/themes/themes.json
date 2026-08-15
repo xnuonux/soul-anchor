@@ -1,0 +1,477 @@
+{
+  "pouredAt": "2026-08-15T04:35:29.642Z",
+  "facet": "C:/dev/facet",
+  "themes": [
+    {
+      "name": "house",
+      "label": "house (the original)",
+      "vars": {},
+      "ground": [
+        "#060709",
+        "#101427",
+        "#1a1430",
+        "#060709"
+      ]
+    },
+    {
+      "name": "oxblood",
+      "label": "oxblood",
+      "vars": {
+        "--bg": "#0e090a",
+        "--ink": "#ece4e5",
+        "--dim": "#b39ea1",
+        "--faint": "#746365",
+        "--line": "rgba(221,62,75,0.22)",
+        "--glass": "rgba(14,9,10,.55)",
+        "--accent": "#dd3e4b"
+      },
+      "ground": [
+        "#0e090a",
+        "#44121c",
+        "#2a0409",
+        "#0e090a"
+      ],
+      "receipt": "poured by facet, stone oxblood, format soul-anchor"
+    },
+    {
+      "name": "emerald",
+      "label": "emerald",
+      "vars": {
+        "--bg": "#090e0c",
+        "--ink": "#e4ece8",
+        "--dim": "#9eb3a9",
+        "--faint": "#63746c",
+        "--line": "rgba(52,211,145,0.22)",
+        "--glass": "rgba(9,14,12,.55)",
+        "--accent": "#34d391"
+      },
+      "ground": [
+        "#090e0c",
+        "#15422a",
+        "#052918",
+        "#090e0c"
+      ],
+      "receipt": "poured by facet, stone emerald, format soul-anchor"
+    },
+    {
+      "name": "sapphire",
+      "label": "sapphire",
+      "vars": {
+        "--bg": "#090a0e",
+        "--ink": "#e4e6ec",
+        "--dim": "#9ea4b3",
+        "--faint": "#636874",
+        "--line": "rgba(49,90,213,0.22)",
+        "--glass": "rgba(9,10,14,.55)",
+        "--accent": "#315ad5"
+      },
+      "ground": [
+        "#090a0e",
+        "#172a4c",
+        "#051029",
+        "#090a0e"
+      ],
+      "receipt": "poured by facet, stone sapphire, format soul-anchor"
+    },
+    {
+      "name": "amethyst",
+      "label": "amethyst",
+      "vars": {
+        "--bg": "#0c090e",
+        "--ink": "#e8e4ec",
+        "--dim": "#a99eb3",
+        "--faint": "#6c6374",
+        "--line": "rgba(150,69,208,0.22)",
+        "--glass": "rgba(12,9,14,.55)",
+        "--accent": "#9645d0"
+      },
+      "ground": [
+        "#0c090e",
+        "#30194a",
+        "#180628",
+        "#0c090e"
+      ],
+      "receipt": "poured by facet, stone amethyst, format soul-anchor"
+    },
+    {
+      "name": "obsidian",
+      "label": "obsidian",
+      "vars": {
+        "--bg": "#090b0e",
+        "--ink": "#e4e7ec",
+        "--dim": "#9ea5b3",
+        "--faint": "#636874",
+        "--line": "rgba(111,123,155,0.22)",
+        "--glass": "rgba(9,11,14,.55)",
+        "--accent": "#6f7b9b"
+      },
+      "ground": [
+        "#090b0e",
+        "#2c3036",
+        "#10151e",
+        "#090b0e"
+      ],
+      "receipt": "poured by facet, stone obsidian, format soul-anchor"
+    },
+    {
+      "name": "bronze",
+      "label": "bronze",
+      "vars": {
+        "--bg": "#0e0c09",
+        "--ink": "#ece9e4",
+        "--dim": "#b3ab9e",
+        "--faint": "#746d63",
+        "--line": "rgba(205,164,77,0.22)",
+        "--glass": "rgba(14,12,9,.55)",
+        "--accent": "#cda44d"
+      },
+      "ground": [
+        "#0e0c09",
+        "#3c2c17",
+        "#271b07",
+        "#0e0c09"
+      ],
+      "receipt": "poured by facet, stone bronze, format soul-anchor"
+    },
+    {
+      "name": "moonstone",
+      "label": "moonstone",
+      "vars": {
+        "--bg": "#090a0e",
+        "--ink": "#e4e6ec",
+        "--dim": "#9ea3b3",
+        "--faint": "#636774",
+        "--line": "rgba(110,120,166,0.22)",
+        "--glass": "rgba(9,10,14,.55)",
+        "--accent": "#6e78a6"
+      },
+      "ground": [
+        "#090a0e",
+        "#232730",
+        "#0e1220",
+        "#090a0e"
+      ],
+      "receipt": "poured by facet, stone moonstone, format soul-anchor"
+    },
+    {
+      "name": "garnet",
+      "label": "garnet",
+      "vars": {
+        "--bg": "#0e090a",
+        "--ink": "#ece4e6",
+        "--dim": "#b39ea2",
+        "--faint": "#746366",
+        "--line": "rgba(212,59,82,0.22)",
+        "--glass": "rgba(14,9,10,.55)",
+        "--accent": "#d43b52"
+      },
+      "ground": [
+        "#0e090a",
+        "#411420",
+        "#29050c",
+        "#0e090a"
+      ],
+      "receipt": "poured by facet, stone garnet, format soul-anchor"
+    },
+    {
+      "name": "citrine",
+      "label": "citrine",
+      "vars": {
+        "--bg": "#0e0d09",
+        "--ink": "#eceae4",
+        "--dim": "#b3ae9e",
+        "--faint": "#747063",
+        "--line": "rgba(219,186,36,0.22)",
+        "--glass": "rgba(14,13,9,.55)",
+        "--accent": "#dbba24"
+      },
+      "ground": [
+        "#0e0d09",
+        "#4c3b13",
+        "#2a2103",
+        "#0e0d09"
+      ],
+      "receipt": "poured by facet, stone citrine, format soul-anchor"
+    },
+    {
+      "name": "sunstone",
+      "label": "sunstone",
+      "vars": {
+        "--bg": "#0e0b09",
+        "--ink": "#ece7e4",
+        "--dim": "#b3a69e",
+        "--faint": "#746963",
+        "--line": "rgba(218,127,61,0.22)",
+        "--glass": "rgba(14,11,9,.55)",
+        "--accent": "#da7f3d"
+      },
+      "ground": [
+        "#0e0b09",
+        "#4a2515",
+        "#2a1204",
+        "#0e0b09"
+      ],
+      "receipt": "poured by facet, stone sunstone, format soul-anchor"
+    },
+    {
+      "name": "halo",
+      "label": "halo",
+      "vars": {
+        "--bg": "#0e0d09",
+        "--ink": "#eceae4",
+        "--dim": "#b3ad9e",
+        "--faint": "#746f63",
+        "--line": "rgba(228,190,54,0.22)",
+        "--glass": "rgba(14,13,9,.55)",
+        "--accent": "#e4be36"
+      },
+      "ground": [
+        "#0e0d09",
+        "#463410",
+        "#2a2003",
+        "#0e0d09"
+      ],
+      "receipt": "poured by facet, stone halo, format soul-anchor"
+    },
+    {
+      "name": "rose-quartz",
+      "label": "rose quartz",
+      "vars": {
+        "--bg": "#0e090b",
+        "--ink": "#ece4e7",
+        "--dim": "#b39ea7",
+        "--faint": "#74636a",
+        "--line": "rgba(190,79,122,0.22)",
+        "--glass": "rgba(14,9,11,.55)",
+        "--accent": "#be4f7a"
+      },
+      "ground": [
+        "#0e090b",
+        "#432032",
+        "#250915",
+        "#0e090b"
+      ],
+      "receipt": "poured by facet, stone rose-quartz, format soul-anchor"
+    },
+    {
+      "name": "jade",
+      "label": "jade",
+      "vars": {
+        "--bg": "#090e0c",
+        "--ink": "#e4ece9",
+        "--dim": "#9eb3ab",
+        "--faint": "#63746d",
+        "--line": "rgba(69,195,155,0.22)",
+        "--glass": "rgba(9,14,12,.55)",
+        "--accent": "#45c39b"
+      },
+      "ground": [
+        "#090e0c",
+        "#1a3c2d",
+        "#08261b",
+        "#090e0c"
+      ],
+      "receipt": "poured by facet, stone jade, format soul-anchor"
+    },
+    {
+      "name": "aquamarine",
+      "label": "aquamarine",
+      "vars": {
+        "--bg": "#090e0e",
+        "--ink": "#e4ecec",
+        "--dim": "#9eb3b1",
+        "--faint": "#637473",
+        "--line": "rgba(50,205,203,0.22)",
+        "--glass": "rgba(9,14,14,.55)",
+        "--accent": "#32cdcb"
+      },
+      "ground": [
+        "#090e0e",
+        "#194943",
+        "#062826",
+        "#090e0e"
+      ],
+      "receipt": "poured by facet, stone aquamarine, format soul-anchor"
+    },
+    {
+      "name": "glacier",
+      "label": "glacier",
+      "vars": {
+        "--bg": "#090d0e",
+        "--ink": "#e4eaec",
+        "--dim": "#9eadb3",
+        "--faint": "#636f74",
+        "--line": "rgba(91,153,181,0.22)",
+        "--glass": "rgba(9,13,14,.55)",
+        "--accent": "#5b99b5"
+      },
+      "ground": [
+        "#090d0e",
+        "#23393f",
+        "#0b1d23",
+        "#090d0e"
+      ],
+      "receipt": "poured by facet, stone glacier, format soul-anchor"
+    },
+    {
+      "name": "lapis",
+      "label": "lapis",
+      "vars": {
+        "--bg": "#090b0e",
+        "--ink": "#e4e7ec",
+        "--dim": "#9ea6b3",
+        "--faint": "#636974",
+        "--line": "rgba(50,108,216,0.22)",
+        "--glass": "rgba(9,11,14,.55)",
+        "--accent": "#326cd8"
+      },
+      "ground": [
+        "#090b0e",
+        "#132943",
+        "#04132a",
+        "#090b0e"
+      ],
+      "receipt": "poured by facet, stone lapis, format soul-anchor"
+    },
+    {
+      "name": "ultraviolet",
+      "label": "ultraviolet",
+      "vars": {
+        "--bg": "#0a090e",
+        "--ink": "#e6e4ec",
+        "--dim": "#a39eb3",
+        "--faint": "#676374",
+        "--line": "rgba(109,60,215,0.22)",
+        "--glass": "rgba(10,9,14,.55)",
+        "--accent": "#6d3cd7"
+      },
+      "ground": [
+        "#0a090e",
+        "#1d1442",
+        "#0e0529",
+        "#0a090e"
+      ],
+      "receipt": "poured by facet, stone ultraviolet, format soul-anchor"
+    },
+    {
+      "name": "orchid",
+      "label": "orchid",
+      "vars": {
+        "--bg": "#0d090e",
+        "--ink": "#ebe4ec",
+        "--dim": "#af9eb3",
+        "--faint": "#716374",
+        "--line": "rgba(190,71,206,0.22)",
+        "--glass": "rgba(13,9,14,.55)",
+        "--accent": "#be47ce"
+      },
+      "ground": [
+        "#0d090e",
+        "#401b4b",
+        "#220627",
+        "#0d090e"
+      ],
+      "receipt": "poured by facet, stone orchid, format soul-anchor"
+    },
+    {
+      "name": "hematite",
+      "label": "hematite",
+      "vars": {
+        "--bg": "#090b0e",
+        "--ink": "#e4e8ec",
+        "--dim": "#9ea8b3",
+        "--faint": "#636b74",
+        "--line": "rgba(115,131,150,0.22)",
+        "--glass": "rgba(9,11,14,.55)",
+        "--accent": "#738396"
+      },
+      "ground": [
+        "#090b0e",
+        "#282b2e",
+        "#11171d",
+        "#090b0e"
+      ],
+      "receipt": "poured by facet, stone hematite, format soul-anchor"
+    },
+    {
+      "name": "opal",
+      "label": "opal",
+      "vars": {
+        "--bg": "#090d0e",
+        "--ink": "#e4ebec",
+        "--dim": "#9eb1b3",
+        "--faint": "#637274",
+        "--line": "rgba(96,152,162,0.22)",
+        "--glass": "rgba(9,13,14,.55)",
+        "--accent": "#6098a2"
+      },
+      "ground": [
+        "#090d0e",
+        "#263636",
+        "#0e1e20",
+        "#090d0e"
+      ],
+      "receipt": "poured by facet, stone opal, format soul-anchor"
+    },
+    {
+      "name": "frostbite",
+      "label": "frostbite",
+      "vars": {
+        "--bg": "#090d0e",
+        "--ink": "#e4ebec",
+        "--dim": "#9eafb3",
+        "--faint": "#637074",
+        "--line": "rgba(67,168,202,0.22)",
+        "--glass": "rgba(9,13,14,.55)",
+        "--accent": "#43a8ca"
+      },
+      "ground": [
+        "#090d0e",
+        "#17383d",
+        "#072127",
+        "#090d0e"
+      ],
+      "receipt": "poured by facet, stone frostbite, format soul-anchor"
+    },
+    {
+      "name": "verdigris",
+      "label": "verdigris",
+      "vars": {
+        "--bg": "#090e0d",
+        "--ink": "#e4ecea",
+        "--dim": "#9eb3ae",
+        "--faint": "#637470",
+        "--line": "rgba(71,190,169,0.22)",
+        "--glass": "rgba(9,14,13,.55)",
+        "--accent": "#47bea9"
+      },
+      "ground": [
+        "#090e0d",
+        "#1b3c32",
+        "#09251f",
+        "#090e0d"
+      ],
+      "receipt": "poured by facet, stone verdigris, format soul-anchor"
+    },
+    {
+      "name": "eclipse",
+      "label": "eclipse",
+      "vars": {
+        "--bg": "#09090e",
+        "--ink": "#e5e4ec",
+        "--dim": "#a09eb3",
+        "--faint": "#646374",
+        "--line": "rgba(104,89,191,0.22)",
+        "--glass": "rgba(9,9,14,.55)",
+        "--accent": "#6859bf"
+      },
+      "ground": [
+        "#09090e",
+        "#222144",
+        "#0c0a24",
+        "#09090e"
+      ],
+      "receipt": "poured by facet, stone eclipse, format soul-anchor"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "soul-anchor",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "the thing that survives the session boundary. the keel family, unified, as a product.",
+  "engines": { "node": ">=24" },
+  "scripts": {
+    "wake": "node engine/keel.mjs wake",
+    "audit": "node engine/keel.mjs audit",
+    "test": "node --test \"engine/**/*.test.mjs\"",
+    "migrate": "node scripts/migrate-supabase.mjs",
+    "serve": "node server/server.mjs",
+    "mcp": "node server/mcp.mjs",
+    "app:dev": "npm --prefix app run dev",
+    "app:build": "npm --prefix app run build"
+  }
+}

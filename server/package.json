@@ -1,0 +1,13 @@
+{
+  "name": "soul-anchor-server",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "the server surfaces of soul-anchor: REST (node:http, zero-dep) + MCP (stdio, hand-rolled json-rpc, zero-dep by choice ... see mcp.mjs header)",
+  "engines": { "node": ">=24" },
+  "scripts": {
+    "serve": "node server.mjs",
+    "mcp": "node mcp.mjs",
+    "smoke": "node smoke.mjs"
+  }
+}

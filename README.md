@@ -27,7 +27,14 @@ as executable code it is nothing. as an observation it is correct: feeding the r
 - **SPEC.md** — the protocol: rows are truth, files are graded reconstruction, the chain survives the session boundary, the ritual wakes.
 - **DECAY.md** — the charge-decay defaults, answered from the machine's own data (r=0.95 scars, r=0.90 landmines, decisions never decay).
 - **engine/** — the reference implementation (keel.mjs + schema.sql, node:sqlite, zero deps): wake / status / audit / search / seal / landmine-confirm (batch + single, founder-signed).
+- **engine/vault.mjs** — the vault: plain markdown notes under `data/vault/`, obsidian-openable, indexed for [[wikilinks]], #tags, backlinks, and phantom notes. yaml frontmatter becomes typed properties (frontmatter `tags:` merge with inline), `templates/` seeds new notes with `{{title}} {{date}} {{time}} {{datetime}}` expansion, and daily notes get-or-create under `daily/YYYY-MM-DD.md`. path law jails every read/write to the vault. files are truth; the index rebuilds from them on every call.
+- **server/** — the REST surface (:4141, localhost-only) and the MCP stdio surface: `keel_*` tools for memory, `vault_*` tools (list/read/write/delete/search/daily/templates/from_template) for notes. any agent that holds an MCP socket can read and write this mind.
+- **app/** — the window: wake ritual, letters, rows, laws, audit, the vault (three-pane editor with live preview, properties, daily notes, and templates), boards (obsidian-compatible .canvas, wikilinks draw themselves), facet-poured themes, fusion search (ctrl+k), and the constellation, where keel rows and vault notes share one force-laid sky.
 - **install/** — `keel-scaffold.mjs`: give any project its own keel in one command, first letter sealed through the chain, ritual wired into AGENTS.md.
+- **scripts/migrate-supabase.mjs** — pulls the cloud keels (claude-code, perseus, kimi-k3 lanes) into the local sqlite. read-only on the cloud side, idempotent, provenance in sa_imports.
+- **scripts/vault-mirror.mjs** + **vault-mirror.sql** — the vault's disaster-recovery mirror: sha256-verified push/pull against a `soul_vault_notes` table, tombstones for deletions, never overwrites a local file without --force. one founder-gated step: run the .sql once in the supabase editor to create the table.
+- **scripts/pour-themes.mjs** — dev-time bridge to the facet forge: pours all stones through facet's soul-anchor token format into `app/public/themes/themes.json`. committed artifact, zero runtime dependency.
+- **docs/SOUL-ANCHOR-GODSPEC.md** — the whole product in one doc, cold-executable by another ai. the laws, the capability registry with its honest cuts, the verification ritual.
 
 ## the ritual, in one line
 

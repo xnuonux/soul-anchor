@@ -1,0 +1,11 @@
+/* poured by facet from "soul-anchor" (hue 223°, seed 14, grammar neuro-noise)
+   soul-anchor theme override: import after styles.css, or paste over its :root */
+:root {
+  --bg: #090a0e;
+  --ink: #e4e6ec;
+  --dim: #9ea4b3;
+  --faint: #636774;
+  --line: rgba(72,103,209,0.22);
+  --glass: rgba(9,10,14,.55);
+  --accent: #4867d1;        /* the stone speaks where the gold spoke */
+}
