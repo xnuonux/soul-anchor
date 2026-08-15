@@ -20,6 +20,7 @@ import { createHash } from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { cloudKey, SUPA_URL } from './cloud-key.mjs';
 
 const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const VAULT_ROOT = process.env.SOUL_ANCHOR_VAULT
@@ -29,9 +30,9 @@ const LANE = process.env.SOUL_ANCHOR_LANE || 'kimi';
 const CMD = process.argv[2] || 'status';
 const FORCE = process.argv.includes('--force');
 
-const SUPA_URL = 'https://fpposmirumtbocqtxued.supabase.co';
-const SUPA_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwcG9zbWlydW10Ym9jcXR4dWVkIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NDMwMjkxOCwiZXhwIjoyMDg5ODc4OTE4fQ.0Z8iu2CbTAb_SEVMJbA1OLTD_JLo-i5YDUNYkyrAKhQ';
+const SUPA_KEY = cloudKey();
 const TABLE = 'soul_vault_notes';
+if (!SUPA_KEY) process.exit(2);
 
 const sha256 = (s) => createHash('sha256').update(s, 'utf8').digest('hex');
 const HEADERS = { apikey: SUPA_KEY, Authorization: `Bearer ${SUPA_KEY}` };
