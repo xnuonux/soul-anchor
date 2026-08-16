@@ -1,18 +1,28 @@
 {
-  "name": "soul-anchor",
-  "version": "0.1.0",
+  "name": "@eternities/soul-anchor",
+  "version": "1.0.0",
   "private": true,
+  "license": "UNLICENSED",
   "type": "module",
-  "description": "the thing that survives the session boundary. the keel family, unified, as a product.",
+  "description": "the keel class. the thing that survives the session boundary.",
   "engines": { "node": ">=24" },
+  "bin": { "keel": "./engine/keel.mjs" },
   "scripts": {
-    "wake": "node engine/keel.mjs wake",
-    "audit": "node engine/keel.mjs audit",
+    "wake": "node engine/keel.mjs wake --mind grok",
+    "status": "node engine/keel.mjs status --mind grok",
     "test": "node --test \"engine/**/*.test.mjs\"",
     "migrate": "node scripts/migrate-supabase.mjs",
     "serve": "node server/server.mjs",
     "mcp": "node server/mcp.mjs",
     "app:dev": "npm --prefix app run dev",
     "app:build": "npm --prefix app run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xnuonux/soul-anchor.git"
+  },
+  "author": "Eternities Inc",
+  "dependencies": {
+    "pg": "^8.23.0"
   }
 }

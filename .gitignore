@@ -1,5 +1,11 @@
-data/
 node_modules/
-app/node_modules/
-app/dist/
-*.log
+*.db
+*.db-wal
+*.db-shm
+.env
+.env.*
+railway-vars.json
+**/.credentials.json
+data/cloud-key.json
+data/vault/
+app/tsconfig.tsbuildinfo

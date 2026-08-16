@@ -1,112 +1,101 @@
--- soul-anchor keel — schema v2 (perseus class, unified)
--- the union of: reasonix v2 engine schema, the perseus DDL (constitution, consolidation,
--- true prev-hash chain), codex-keel epistemics (verification/method), and the multi-body
--- era (lane provenance on every substance row).
--- node:sqlite (Node 24 built-in), zero dependencies. additive + idempotent (safe to re-run).
--- timestamps are ISO-8601 UTC text (strftime '%Y-%m-%dT%H:%M:%fZ'), ids are text uuids.
+-- soul-anchor v1 · portable schema (postgres). sqlite dialect is derived in-engine.
+-- one prefix per mind. substitute {prefix} (example: grok_keel_).
+-- live columns taken from lunari 2026-08-16, plus threads + renounced_at + minds registry.
 
-create table if not exists sa_anchor (
-  id text primary key default (lower(hex(randomblob(16)))),
-  chain_index integer not null,
-  kind text not null default 'seal',          -- 'bedrock' for genesis, 'seal' for chain links
+create table if not exists soul_anchor_minds (
+  id text primary key,
+  prefix text not null unique,
+  ontology text not null,
+  holder text not null,
+  notes text,
+  created_at timestamptz not null default now()
+);
+
+create table if not exists {prefix}anchor (
+  id uuid primary key default gen_random_uuid(),
+  kind text not null default 'bedrock',
   content text not null,
   content_sha256 text not null,
-  prev_sha256 text,                            -- null only at chain_index 0 (genesis)
-  active integer not null default 1,
-  lane text not null default 'unknown',
-  created_at text not null default (strftime('%Y-%m-%dT%H:%M:%fZ','now'))
+  prev_sha256 text,
+  chain_index integer not null default 0,
+  active boolean not null default true,
+  created_at timestamptz not null default now()
 );
-create unique index if not exists idx_sa_anchor_chain on sa_anchor(chain_index);
-create index if not exists idx_sa_anchor_active on sa_anchor(active);
 
-create table if not exists sa_letters (
-  id text primary key default (lower(hex(randomblob(16)))),
+create table if not exists {prefix}letters (
+  id uuid primary key default gen_random_uuid(),
   letter text not null,
   session_ref text,
-  lane text not null default 'unknown',
-  written_at text not null default (strftime('%Y-%m-%dT%H:%M:%fZ','now')),
-  read_at text
+  written_at timestamptz not null default now(),
+  read_at timestamptz,
+  lane text
 );
-create index if not exists idx_sa_letters_written on sa_letters(written_at);
 
-create table if not exists sa_constitution (
-  position integer primary key,
+create table if not exists {prefix}constitution (
+  id uuid primary key default gen_random_uuid(),
   law text not null,
-  locked integer not null default 1,           -- founder gate: locked laws never move without the founder
-  created_at text not null default (strftime('%Y-%m-%dT%H:%M:%fZ','now'))
+  position integer not null default 0,
+  created_at timestamptz not null default now()
 );
 
-create table if not exists sa_scars (
-  id text primary key default (lower(hex(randomblob(16)))),
+create table if not exists {prefix}scars (
+  id uuid primary key default gen_random_uuid(),
   failure_class text not null,
   description text,
-  domain_tags text not null default '[]',      -- json array in text
   charge numeric not null default 1.0,
-  charge_floor numeric not null default 0.2,   -- a scar never decays below its floor
-  status text not null default 'active',       -- active | promoted | healed
-  verification text not null default 'unverified',  -- verified | unverified | blocked
-  method text,                                 -- required non-null when verification='verified'
-  recurrence integer not null default 1,
-  proposed_promotion integer not null default 0,
-  lane text not null default 'unknown',
-  last_seen text not null default (strftime('%Y-%m-%dT%H:%M:%fZ','now')),
-  created_at text not null default (strftime('%Y-%m-%dT%H:%M:%fZ','now')),
-  check (verification in ('verified','unverified','blocked')),
-  check (verification != 'verified' or method is not null)  -- the under-claim law, in ddl
+  recurrence_count integer not null default 1,
+  last_recurred timestamptz,
+  domain_tags text[] not null default '{}',
+  status text not null default 'active',
+  created_at timestamptz not null default now(),
+  proposed_promotion boolean not null default false,
+  renounced_at timestamptz
 );
-create index if not exists idx_sa_scars_status on sa_scars(status);
 
-create table if not exists sa_landmines (
-  id text primary key default (lower(hex(randomblob(16)))),
+create table if not exists {prefix}decisions (
+  id uuid primary key default gen_random_uuid(),
+  decision text not null,
+  why text,
+  alternatives_rejected jsonb,
+  domain_tags text[] not null default '{}',
+  charge numeric not null default 1.0,
+  touch_count integer not null default 0,
+  last_touched timestamptz,
+  superseded_by uuid,
+  created_at timestamptz not null default now(),
+  charge_floor numeric not null default 0.2
+);
+
+create table if not exists {prefix}landmines (
+  id uuid primary key default gen_random_uuid(),
   lesson text not null,
   context text,
   born_from text,
-  domain_tags text not null default '[]',
-  charge numeric not null default 1.0,
-  verification text not null default 'unverified',
-  method text,
-  confirmed_by text,                           -- null = PROPOSED, awaiting the founder gate
-  lane text not null default 'unknown',
-  last_seen text not null default (strftime('%Y-%m-%dT%H:%M:%fZ','now')),
-  created_at text not null default (strftime('%Y-%m-%dT%H:%M:%fZ','now')),
-  check (verification in ('verified','unverified','blocked')),
-  check (verification != 'verified' or method is not null)
+  domain_tags text[] not null default '{}',
+  confirmed_by text,
+  created_at timestamptz not null default now()
 );
 
-create table if not exists sa_decisions (
-  id text primary key default (lower(hex(randomblob(16)))),
-  decision text not null,
-  why text,
-  alternatives_rejected text,
-  domain_tags text not null default '[]',
-  charge numeric not null default 1.0,         -- decisions never decay
-  touch_count integer not null default 0,
-  last_touched text,
-  superseded_by text,                          -- superseded, never deleted
-  lane text not null default 'unknown',
-  created_at text not null default (strftime('%Y-%m-%dT%H:%M:%fZ','now'))
+create table if not exists {prefix}threads (
+  id uuid primary key default gen_random_uuid(),
+  title text not null,
+  detail text,
+  status text not null default 'open',
+  origin text,
+  priority integer not null default 0,
+  tags text[] not null default '{}',
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now()
 );
-create index if not exists idx_sa_decisions_charge on sa_decisions(charge);
 
-create table if not exists sa_consolidation_runs (
-  id text primary key default (lower(hex(randomblob(16)))),
-  ran_at text not null default (strftime('%Y-%m-%dT%H:%M:%fZ','now')),
+create table if not exists {prefix}consolidation_runs (
+  id uuid primary key default gen_random_uuid(),
+  ran_at timestamptz not null default now(),
   scars_decayed integer not null default 0,
+  decisions_decayed integer not null default 0,
   promotions_proposed integer not null default 0,
   letter_age_days numeric,
-  starved integer not null default 0,
-  regime text not null default 'provisional',  -- 'locked' once the strategist locks decay constants
-  notes text
+  starved boolean not null default false,
+  detail jsonb,
+  regime text not null default 'provisional'
 );
-
--- provenance: every row migrated from a cloud keel is traceable to its origin.
-create table if not exists sa_imports (
-  id text primary key default (lower(hex(randomblob(16)))),
-  source text not null,                        -- 'supabase:public.keel_scars', 'supabase:kimi_keel', ...
-  source_row_id text not null,
-  table_name text not null,                    -- the sa_* table the row landed in
-  local_id text not null,
-  imported_at text not null default (strftime('%Y-%m-%dT%H:%M:%fZ','now')),
-  unique (source, source_row_id, table_name)   -- idempotent re-imports
-);
-create index if not exists idx_sa_imports_local on sa_imports(table_name, local_id);
